@@ -3,9 +3,8 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.models import Base
-
-from app.app import app
+from api.app import app
+from api.models import Base
 
 
 @pytest.fixture

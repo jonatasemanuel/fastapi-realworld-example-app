@@ -1,12 +1,14 @@
 from fastapi import FastAPI, HTTPException
-from app.schemas import Message, UserDB, UserList, UserPublic, UserSchema
+from starlette.types import Message
+
+from api.schemas import UserDB, UserList, UserPublic, UserSchema
 
 app = FastAPI()
 
 
 @app.get('/')
 def read_root():
-    return {'message': 'Hello world!'}
+    return {'message': 'Hello, world!'}
 
 
 database = []
@@ -18,7 +20,7 @@ def create_user(user: UserSchema):
 
     database.append(user_with_id)
 
-    return user_with_id
+    return UserPublic(**user_with_id.model_dump())
 
 
 @app.get('/users/', response_model=UserList)
