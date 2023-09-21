@@ -51,7 +51,7 @@ def update_user(
     current_user: CurrentUser,
 ):
     if current_user.id != user_id:
-        raise HTTPException(status_code=401, detail='Not enough permissions')
+        raise HTTPException(status_code=400, detail='Not enough permissions')
 
     current_user.username = user.username
     current_user.password = user.password
