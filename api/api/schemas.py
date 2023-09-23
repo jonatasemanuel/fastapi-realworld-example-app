@@ -45,9 +45,6 @@ class TodoSchema(BaseModel):
 
 class TodoPublic(TodoSchema):
     id: int
-    # title: str
-    # description: str
-    # state: TodoState
 
 
 class TodoList(BaseModel):
