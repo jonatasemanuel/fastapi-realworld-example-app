@@ -22,8 +22,3 @@ jobs:
 
       - name: Test run
         run: poetry run task test --cov-report=xml
-
-      - name: Upload log to codecov
-        uses: codedev/codedev-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
