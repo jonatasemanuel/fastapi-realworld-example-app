@@ -26,4 +26,4 @@ jobs:
       - name: Upload log to codecov
         uses: codedev/codedev-action@v3
         with:
-          token: ${{ api.secrets.CODECOV_TOKEN}}
+          token: ${{ secrets.CODECOV_TOKEN }}
